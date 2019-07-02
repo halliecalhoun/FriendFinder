@@ -2,9 +2,9 @@
   
 var friends = [
   {
-    name:"Sabrina",
-    photo:"https://www.pexels.com/photo/woman-wearing-black-eyeglasses-1239291/",
-    scores:[
+    name: "Sabrina",
+    photo: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=100&w=300",
+    scores: [
         5,
         1,
         4,
@@ -18,9 +18,9 @@ var friends = [
       ]
   },
   {
-    name:"Joey",
-    photo:"https://www.pexels.com/photo/adult-beard-boy-casual-220453/",
-    scores:[
+    name: "Joey",
+    photo: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300",
+    scores: [
         3,
         4,
         1,
@@ -34,9 +34,9 @@ var friends = [
       ]
   },
   {
-    name:"Kendall",
-    photo:"https://www.pexels.com/photo/photography-of-a-beautiful-woman-smiling-1024311/",
-    scores:[
+    name: "Kendall",
+    photo: "https://images.pexels.com/photos/1024311/pexels-photo-1024311.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=200&w=300",
+    scores: [
         1,
         4,
         3,
@@ -50,9 +50,9 @@ var friends = [
       ]
   },
   {
-    name:"Michael",
-    photo:"https://www.pexels.com/photo/photography-of-a-guy-wearing-green-shirt-1222271/",
-    scores:[
+    name: "Michael",
+    photo: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=100&w=300",
+    scores: [
         2,
         1,
         5,
