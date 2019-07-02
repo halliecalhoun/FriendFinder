@@ -69,7 +69,7 @@
                                 <!-- <div class="col-sm-4"> -->
                                 <!-- <select class="form-control" id="question1"> -->
                                 <select class="custom-select" id="question1">
-                                    <option selected>Select An Option</option>
+                                    <option value="">Select An Option</option>
                                     <!-- <option value="placeholder" placeholder="Select An Option"></option> -->
                                     <option value="1">1 (Strongly Disagree)</option>
                                     <option value="2">2</option>
@@ -84,7 +84,7 @@
                             <div class="form-group">
                                 <label for="question2">Question</label>
                                 <select class="custom-select" id="question2">
-                                    <option selected>Select An Option</option>
+                                    <option value="">Select An Option</option>
                                     <option value="1">1 (Strongly Disagree)</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -99,7 +99,7 @@
                             <div class="form-group">
                                 <label for="question3">Question</label>
                                 <select class="custom-select" id="question3">
-                                    <option selected>Select An Option</option>
+                                    <option value="">Select An Option</option>
                                     <option value="1">1 (Strongly Disagree)</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -114,7 +114,7 @@
                             <div class="form-group">
                                 <label for="question4">Question</label>
                                 <select class="custom-select" id="question4">
-                                    <option selected>Select An Option</option>
+                                    <option value="">Select An Option</option>
                                     <option value="1">1 (Strongly Disagree)</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -129,7 +129,7 @@
                             <div class="form-group">
                                 <label for="question5">Question</label>
                                 <select class="custom-select" id="question5">
-                                    <option selected>Select An Option</option>
+                                    <option value="">Select An Option</option>
                                     <option value="1">1 (Strongly Disagree)</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -144,7 +144,7 @@
                             <div class="form-group">
                                 <label for="question6">Question</label>
                                 <select class="custom-select" id="question6">
-                                    <option selected>Select An Option</option>
+                                    <option value="">Select An Option</option>
                                     <option value="1">1 (Strongly Disagree)</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -159,7 +159,7 @@
                             <div class="form-group">
                                 <label for="question7">Question</label>
                                 <select class="custom-select" id="question7">
-                                    <option selected>Select An Option</option>
+                                    <option value="">Select An Option</option>
                                     <option value="1">1 (Strongly Disagree)</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -174,7 +174,7 @@
                             <div class="form-group">
                                 <label for="question8">Question</label>
                                 <select class="custom-select" id="question8">
-                                    <option selected>Select An Option</option>
+                                    <option value="">Select An Option</option>
                                     <option value="1">1 (Strongly Disagree)</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -189,7 +189,7 @@
                             <div class="form-group">
                                 <label for="question9">Question</label>
                                 <select class="custom-select" id="question9">
-                                    <option selected>Select An Option</option>
+                                    <option value="">Select An Option</option>
                                     <option value="1">1 (Strongly Disagree)</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -204,7 +204,7 @@
                             <div class="form-group">
                                 <label for="question10">Question</label>
                                 <select class="custom-select" id="question10">
-                                    <option selected>Select An Option</option>
+                                    <option value="">Select An Option</option>
                                     <option value="1">1 (Strongly Disagree)</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -282,7 +282,27 @@
 
     $("#submit").on("click", function (event) {
         event.preventDefault();
+        function validateForm() {
+            var isValid = true;
 
+            $(".form-control").each(function() {
+                if ($(this).val() === "")
+                isValid = false;
+                // alert("Please fill out all fields before submitting your survey!")
+            });
+
+            $(".custom-select").each(function() {
+                if ($(this).val() === "")
+                isValid = false;
+                // alert("Please fill out all fields before submitting your survey!")
+            })
+            return isValid;
+        }
+
+        if (validateForm() == true) {
+
+        
+        
         // Here we grab the form elements
         var newUser = {
             name: $("#input-name").val(),
@@ -300,6 +320,7 @@
                 $("#question10").val(),
             ]
         };
+    
         console.log(newUser);
         var currentURL = window.location.origin;
 
@@ -308,9 +329,13 @@
             $("#matchPhoto").attr("src", data.photo);
             $('#exampleModal').modal('toggle')
             // $("#resultsModal").modal("open");
-        })
+        });
+    } else {
+        alert("Please fill out all fields before submitting your survey!");
+    }
+    return false;
     });
-
+    
 
     
 </script>
